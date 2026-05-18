@@ -8,8 +8,6 @@
         <div class="floating-elements">
             <img src="{{ asset('images/leafe1.png') }}" class="leaf-1" alt="deco">
             <img src="{{ asset('images/leafe2.png') }}" class="leaf-2" alt="deco">
-            <img src="{{ asset('images/saffron-crocus-1.png') }}" class="flower-1" alt="deco">
-            <img src="{{ asset('images/saffron-crocus-2.png') }}" class="flower-2" alt="deco">
         </div>
         <div class="container">
             <div class="row align-items-center">

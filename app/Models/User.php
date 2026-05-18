@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'role',
+        'is_phone_verified',
+        'is_email_verified',
     ];
 
     /**
@@ -40,5 +44,27 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_phone_verified' => 'boolean',
+        'is_email_verified' => 'boolean',
     ];
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
+
+    public function kyc()
+    {
+        return $this->hasOne(KycVerification::class);
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 }
